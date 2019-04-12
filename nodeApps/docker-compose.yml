@@ -1,0 +1,18 @@
+version: '2.1'
+
+services:
+  nodeapps:
+    image: nodeapps
+    build: .
+    volumes:
+      - '.:/app'
+    environment:
+      NODE_ENV: production
+    ports:
+      - 7272:7272
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: Inzamam
+      MONGO_INITDB_ROOT_PASSWORD: Inzamam      

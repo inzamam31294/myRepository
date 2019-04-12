@@ -1,0 +1,20 @@
+version: '2.1'
+
+services:
+  nodeapps:
+    image: nodeapps
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 7272:7272
+      - 9229:9229
+    command: node --inspect=0.0.0.0:9229 index.js
+  
+  mongodb:
+    image: mongo: latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: Inzamam
+      MONGO_INITDB_ROOT_PASSWORD: Inzamam
+    ports:
+      - 27017: 27017      
